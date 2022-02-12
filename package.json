@@ -36,8 +36,5 @@
     "source/js/**/*.js",
     "source/img/**/*.svg",
     "source/sass/**/*.scss"
-  ],
-  "engines": {
-    "node": "14.15.0"
-  }
+  ]
 }
