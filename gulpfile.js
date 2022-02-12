@@ -16,7 +16,7 @@ const styles = () => {
     .pipe(sass())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("public/css"))
     .pipe(sync.stream());
 }
 
@@ -27,7 +27,7 @@ exports.styles = styles;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'public'
     },
     cors: true,
     notify: false,
@@ -54,14 +54,14 @@ exports.default = gulp.series(
 const html = () => {
   return gulp.src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("public"));
 }
 
 // Images
 
 const images = () => {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
-    .pipe(gulp.dest("build/img"))
+    .pipe(gulp.dest("public/img"))
 }
 
 exports.images = images;
@@ -76,7 +76,7 @@ const copy = (done) => {
   ], {
     base: "source"
   })
-    .pipe(gulp.dest("build"))
+    .pipe(gulp.dest("public"))
   done();
 }
 
@@ -85,7 +85,7 @@ exports.copy = copy;
 // Clean
 
 const clean = () => {
-  return del("build");
+  return del("public");
 };
 
 // Reload
