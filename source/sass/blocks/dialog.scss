@@ -1,0 +1,67 @@
+.dialog {
+  width: 750px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 30px;
+}
+
+.dialog__name-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog__name {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.dialog__rank {
+  color: $basic-grey;
+}
+
+.dialog_text {
+  background-color: $light-black;
+  border-radius: 10px;
+  padding: 15px 40px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.dialog__options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 10px;
+}
+
+.dialog__button-wrapper {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+}
+
+.dialog__button-esc {
+  background-color: $basic-white;
+  color: $basic-black;
+  font-family: $basic-font-family;
+  border: 1px solid $light-grey;
+  border-radius: 5px;
+  width: 64px;
+  height: 42px;
+  margin-right: 15px;
+  transition: opacity 0.2s ease-out;
+  box-shadow: 0 5px 0 0 $light-grey,
+              0 10px 0 0 rgb(227, 227, 227, 0.3);
+
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}

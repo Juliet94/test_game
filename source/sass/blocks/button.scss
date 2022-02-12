@@ -1,0 +1,80 @@
+.button {
+  position: relative;
+  padding: 15px 30px;
+  color: $basic-black;
+  background-color: $basic-white;
+  border-radius: 10px;
+  border: none;
+  font-family: $basic-font-family;
+  font-size: 16px;
+  transition: color 0.2s ease-out,
+              background-color 0.2s ease-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 9px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 12px solid $basic-white;
+    bottom: -12px;
+    left: 45%;
+    transition: border-top-color 0.2s ease-out;
+  }
+
+  &--quest {
+    background-color: $yellow;
+    padding-right: 44px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background-image: url("../img/commas-black.svg");
+      background-repeat: no-repeat;
+      right: 10px;
+    }
+
+    &::after {
+      border-top: 12px solid $yellow;
+    }
+
+    &:hover {
+      &::before {
+        background-image: url("../img/commas-white.svg");
+      }
+    }
+  }
+
+  &--trade {
+    background-color: $violet;
+    padding-right: 44px;
+    color: $basic-white;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background-image: url("../img/bag-white.svg");
+      background-repeat: no-repeat;
+      right: 10px;
+    }
+
+    &::after {
+      border-top: 12px solid $violet;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $basic-black;
+    color: $basic-white;
+
+    &::after {
+      border-top-color: $basic-black;
+    }
+  }
+}
